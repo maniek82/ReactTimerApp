@@ -6,14 +6,14 @@ var Navigation = () => {
  		<div className ="top-bar">
  			<div className="top-bar-left">
  				<ul className="menu">
-	 				<li className="menu-text">React Timer App</li>
+	 				<li className="menu-text app-name">React Timer App</li>
 	 				<li><IndexLink to="/" activeClassName="active-link">Timer</IndexLink></li>
-	 				<li><Link to="/" activeClassName="active-link"> Countdown </Link></li>
+	 				<li><Link to="/countdown" activeClassName="active-link"> Countdown </Link></li>
  				</ul>
  			</div>
  			<div className="top-bar-right">
  				<ul className="menu">
- 					<li className="menu-text">Craeted by <a href="http://www.mariuszwojewodka.pl" target="_blank">Mariusz</a></li>
+ 					<li className="menu-text">Craeted by <a href="http://www.mariuszwojewodka.pl" className="author" target="_blank">Mariusz</a></li>
  				</ul>
  			</div>
  		</div>
