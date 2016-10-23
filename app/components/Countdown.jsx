@@ -3,11 +3,13 @@ var Clock = require('Clock');
 var CountdownForm = require('CountdownForm');
 var Controls = require('Controls');
 
+
 var Countdown = React.createClass({
   getInitialState: function () {
     return {
       count: 0,
       countdownStatus: 'stopped'
+   
     };
   },
   componentDidUpdate: function (prevProps, prevState) {
@@ -23,9 +25,11 @@ var Countdown = React.createClass({
           this.timer = undefined;
           break;
       }
-    }
+    } 
   },
-
+   showModal: function() {
+   alert("Countdown Finished");
+   },
   componentWillUnmount: function () {
     clearInterval(this.timer);
     this.timer = undefined;
@@ -39,6 +43,7 @@ var Countdown = React.createClass({
       });
       if(newCount ===0) {
         this.setState({countdownStatus: 'stopped'});
+        this.showModal();
       }
     }, 1000);
   },
@@ -52,7 +57,7 @@ var Countdown = React.createClass({
     this.setState({countdownStatus: newStatus});
   },
   render: function () {
-    var {count, countdownStatus} = this.state;
+    var {count, countdownStatus, finish} = this.state;
     
     var renderControlArea = () => {
       if (countdownStatus !== 'stopped') {
